@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:local="clr-namespace:QPlan.Views"
+            x:Class="QPlan.MainPage">
+
+    <NavigationPage Title="Eventos" IconImageSource="icono_evento.png">
+        <x:Arguments>
+            <local:PaginaEventos></local:PaginaEventos>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Establecimientos" IconImageSource="icono_tienda.png">
+        <x:Arguments>
+            <local:PaginaEstablecimientos></local:PaginaEstablecimientos>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Buscar" IconImageSource="icono_busqueda_90px.png">
+        <x:Arguments>
+            <local:PaginaBusqueda></local:PaginaBusqueda>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Cuenta" IconImageSource="icono_pagina_cuenta.png">
+        <x:Arguments>
+            <local:PaginaCuenta></local:PaginaCuenta>
+        </x:Arguments>
+    </NavigationPage>
+    <!--<local:PaginaEventos IconImageSource="icono_evento.png"></local:PaginaEventos>
+    <local:PaginaBusqueda IconImageSource="icono_busqueda_90px.png"></local:PaginaBusqueda>
+    <local:PaginaEstablecimientos IconImageSource="icono_tienda.png"></local:PaginaEstablecimientos>
+    <local:PaginaCuenta IconImageSource="icono_pagina_cuenta.png"></local:PaginaCuenta> -->
+</TabbedPage>
