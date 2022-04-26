@@ -12,15 +12,14 @@ using Xamarin.Forms;
 
 namespace QPlan.ViewModels
 {
-    public class EstablecimientosViewModel : INotifyPropertyChanged
+    public class EstablecimientosViewModel : BaseViewModel
     {
         public bool isBusy;
-        public INavigation Navigation { get; set; }
         public Establecimiento _selectedEstablecimiento;
         public ObservableCollection<Establecimiento> Establecimientos { get; }
         public Command<Establecimiento> EstablecimientoTapped { get; }
         public Command LoadEstablecimientosCommand { get; }
-        public EstablecimientosViewModel(INavigation navigation)
+        public EstablecimientosViewModel(INavigation navigation) : base(navigation)
         {
             this.Navigation = navigation;
             EstablecimientoTapped = new Command<Establecimiento>(OnEstablecimientoSelected);
@@ -71,16 +70,6 @@ namespace QPlan.ViewModels
         {
             _selectedEstablecimiento = null;
             IsBusy = true;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -12,16 +12,15 @@ using Xamarin.Forms;
 
 namespace QPlan.ViewModels
 {
-    public class EventosViewModel : INotifyPropertyChanged
+    public class EventosViewModel : BaseViewModel
     {
-        public INavigation Navigation { get; set; }
         private Evento _selectedEvento;
         public ObservableCollection<Evento> Eventos { get; }
         public Command<Evento> EventoTapped { get; }
         public Command LoadEventosCommand { get; }
         public bool isBusy;
 
-        public EventosViewModel(INavigation navigation)
+        public EventosViewModel(INavigation navigation) : base(navigation)
         {
             this.Navigation = navigation;
             EventoTapped = new Command<Evento>(OnEventoSelected);
@@ -97,16 +96,5 @@ namespace QPlan.ViewModels
                 IsBusy = false;
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
     }
 }
