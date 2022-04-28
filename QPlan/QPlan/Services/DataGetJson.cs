@@ -10,25 +10,50 @@ namespace QPlan.Services
 {
     public class DataGetJson
     {
-        public static readonly string OneEventRequest = "https://localhost:44368/api/Eventoes/1";
+        public static readonly string AllEventsRequest = "https://localhost:44368/api/Eventoes";
 
         public static async Task<Evento> GetEventoAsync()
         {
             try
             {
                 var client = new HttpClient();
-                var response = await client.GetAsync(OneEventRequest);
+                var response = await client.GetAsync("");
                 if (response.IsSuccessStatusCode)
                 {
                     var responseStream = await response.Content.ReadAsStringAsync();
-                    Evento ev = JsonConvert.DeserializeObject<Evento>(responseStream);
-                    return ev;
+                    Rootobject eventos = JsonConvert.DeserializeObject<Rootobject>(responseStream);
+                    
+                    
                 }
             }catch(Exception ex)
             {
                 Console.WriteLine("===>Error<=== " + ex);
             }
             
+            return null;
+        }
+
+        public static async Task<List<Evento>> GetEventosAsync()
+        {
+            try
+            {
+                var client = new HttpClient();
+                var response = await client.GetAsync(AllEventsRequest);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseStream = await response.Content.ReadAsStringAsync();
+                    var eventos = JsonConvert.DeserializeObject<Rootobject>(responseStream);
+                    List<Evento> eventosList = new List<Evento>();
+                    foreach (var ev in eventos.Property1)
+                    {
+                        eventosList.Add(new Evento(ev));
+                    }
+                    return eventosList;
+                }
+            }catch (Exception ex)
+            {
+                Console.WriteLine("====>Error<====" + ex);
+            }
             return null;
         }
 

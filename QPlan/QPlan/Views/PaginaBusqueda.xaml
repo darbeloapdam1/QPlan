@@ -11,15 +11,68 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
             </Grid.RowDefinitions>
             <!--Grid para la barra de busqueda y el boton de buscar-->
             <Grid Grid.Column="1" Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"></ColumnDefinition>
+                    <ColumnDefinition Width="280"></ColumnDefinition>
                     <ColumnDefinition Width="80"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="entSearchBar" Placeholder="¿A donde te apetece ir?" PlaceholderColor="LightGray" Grid.Row="0" Grid.Column="0"></Entry>
                 <Button x:Name="btnBuscar" Text="Buscar" Grid.Row="0" Grid.Column="1" Clicked="btnBuscar_Clicked"></Button>
+            </Grid>
+            <Label Text="Categorías" Grid.Column="1" Grid.Row="3"></Label>
+            <Line BackgroundColor="black" Grid.Column="1" Grid.Row="4" Margin="0,0,30,0"></Line>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="chkDeporte" Grid.Row="0" Grid.Column="0"></CheckBox>
+                <Label Text="Deporte" Grid.Row="0" Grid.Column="0" Margin="30,5,0,0"></Label>
+                <CheckBox x:Name="chkConcierto" Grid.Row="0" Grid.Column="0" Margin="80,0,0,0"></CheckBox>
+                <Label Text="Concierto" Grid.Row="0" Grid.Column="0" Margin="110,5,0,0"></Label>
+                <CheckBox x:Name="chkMusical" Grid.Row="0" Grid.Column="0" Margin="170,0,0,0"></CheckBox>
+                <Label Text="Musical" Grid.Row="0" Grid.Column="0" Margin="200,5,0,0"></Label>
+                <CheckBox x:Name="chkFiesta" Grid.Row="0" Grid.Column="0" Margin="250,0,0,0"></CheckBox>
+                <Label Text="Fiesta" Grid.Row="0" Grid.Column="0" Margin="280,5,0,0"></Label>
+                <CheckBox x:Name="chkTeatro" Grid.Row="1" Grid.Column="0"></CheckBox>
+                <Label Text="Teatro" Grid.Row="1" Grid.Column="0" Margin="30,0,0,0"></Label>
+                <CheckBox x:Name="chkCultura" Grid.Row="1" Grid.Column="0" Margin="80,0,0,0"></CheckBox>
+                <Label Text="Cultura" Grid.Row="1" Grid.Column="0" Margin="110,0,0,0"></Label>
+            </Grid>
+            <Label Text="Lugar" Grid.Row="7" Grid.Column="1"></Label>
+            <Line Grid.Row="8" Grid.Column="1" BackgroundColor="Black" Margin="0,0,30,0"></Line>
+            <Grid Grid.Row="9" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="chkCubierto" Grid.Row="0" Grid.Column="0"></CheckBox>
+                <Label Text="Cubierto" Grid.Row="0" Grid.Column="0" Margin="30,5,0,0"></Label>
+                <CheckBox x:Name="chkAireLibre" Grid.Row="0" Grid.Column="0" Margin="80,0,0,0"></CheckBox>
+                <Label Text="Al aire libre" Grid.Row="0" Grid.Column="0" Margin="110,5,0,0"></Label>
+                <CheckBox x:Name="chkPorCalle" Grid.Row="0" Grid.Column="0" Margin="180,0,0,0"></CheckBox>
+                <Label Text="Por la calle" Grid.Row="0" Grid.Column="0" Margin="210,5,0,0"></Label>
+                <CheckBox x:Name="chkFueraCiudad" Grid.Row="1" Grid.Column="0" Margin="0,0,0,0"></CheckBox>
+                <Label Text="Fuera de la ciudad" Grid.Row="1" Grid.Column="0" Margin="30,0,0,0"></Label>
             </Grid>
         </Grid>
     </ContentPage.Content>

@@ -25,5 +25,12 @@ namespace QPlan.Models
         {
             get { return diaHoraRealizacion.Hour.ToString(); }
         }
+
+        public Evento() { }
+
+        public Evento(EventoJs ev)
+        {
+
+        }
     }
 }

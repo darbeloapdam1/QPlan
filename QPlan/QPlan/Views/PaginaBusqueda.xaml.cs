@@ -1,4 +1,5 @@
-﻿using QPlan.ViewModels;
+﻿using QPlan.Models;
+using QPlan.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace QPlan.Views
         public PaginaBusqueda()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new PaginaBusquedaViewModel();
+            BindingContext = _viewModel = new PaginaBusquedaViewModel(Navigation);
         }
 
         protected override void OnAppearing()
@@ -28,7 +29,10 @@ namespace QPlan.Views
 
         private void btnBuscar_Clicked(object sender, EventArgs e)
         {
-            _viewModel.Search();
+            SearchParameters parameters = new SearchParameters();
+
+
+            _viewModel.Search(parameters);
         }
     }
 }

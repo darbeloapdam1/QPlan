@@ -1,22 +1,24 @@
-﻿using System;
+﻿using QPlan.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace QPlan.ViewModels
 {
-    public class PaginaBusquedaViewModel
+    public class PaginaBusquedaViewModel : BaseViewModel
     {
 
-        public PaginaBusquedaViewModel()
+        public PaginaBusquedaViewModel(INavigation navigation) : base(navigation)
         {
 
         }
 
 
-        public Task Search()
+        public Task Search(SearchParameters parameters)
         {
-            Console.WriteLine("fdsklflsdahfd");
+            
             return null;
         }
 
