@@ -70,7 +70,7 @@ namespace QPlan.Services
                 Evento ev = new Evento()
                 {
                     id = ids[i],
-                    titulo = titulos[i],
+                    nombre = titulos[i],
                     diaHoraRealizacion = diasHoras[i],
                     precio = precios[i],
                     foto = fotos[i],
