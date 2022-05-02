@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QPlan.Views.PaginaCuenta">
+             x:Class="QPlan.Views.PaginaCuenta"
+             Title="QPlan">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="360"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="icono_pagina_cuenta.png" Grid.Column="1" Grid.Row="1" HorizontalOptions="Start" Margin="30,0,0,0"></Image>
+            <Label Text="Entra o Registrate" FontSize="20" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="20,25,0,0"></Label>
+            <ImageButton Source="chebron.png" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Transparent" WidthRequest="25" Margin="0,20,10,0"></ImageButton>
+            <Line BackgroundColor="Black" Grid.Row="2" Grid.Column="1"></Line>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
