@@ -86,7 +86,7 @@ namespace QPlan.Services
         {
             List<Establecimiento> est = new List<Establecimiento>();
             int[] ids = { 1, 2, 3, 4, 5 };
-            string[] nombres = { "Bauarte", "Bar Kla-B", "Goiko Grill", "El corte inglés", "La tagliatella" };
+            string[] nombres = { "Baluarte", "Bar Kla-B", "Goiko Grill", "El corte inglés", "La tagliatella" };
             string[] direcciones = { "PL. del Baluarte", "C, Navas de Tolosa, 11", "P. de Pablo Sarasate", "C. Estella, 9", "Pl. del Castillo, 37"};
             string[] horarios = { "De 8:30 a 20:00", "De 23:00 a 4:00", "De 12:00 a 24:00", "De 10:00 a 22:00", "De 13:30 a 23:00" };
             string[] fotos = { "establecimiento1_baluarte.jpg", "establecimiento2_klab.jpg", "establecimiento3_goiko.jpg", "establecimiento4_corte_ingles.png", "establecimiento5_tagliatella.jfif" };

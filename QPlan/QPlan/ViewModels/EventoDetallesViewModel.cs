@@ -53,8 +53,8 @@ namespace QPlan.ViewModels
 
         public string Titulo
         {
-            get { return Evento.titulo; }
-            set { Evento.titulo = value; }
+            get { return Evento.nombre; }
+            set { Evento.nombre = value; }
         }
 
         public string Lugar

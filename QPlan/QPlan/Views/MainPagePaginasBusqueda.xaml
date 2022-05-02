@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QPlan.Views.MainPagePaginasBusqueda"
+            xmlns:local="clr-namespace:QPlan.Views.PaginasBusqueda">
+    <NavigationPage Title="Todo" IconImageSource="icono_busqueda_90px.png">
+        <x:Arguments>
+            <local:PaginaTodosResultadosBusqueda></local:PaginaTodosResultadosBusqueda>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Eventos" IconImageSource="icono_evento.png">
+        <x:Arguments>
+            <local:PaginaEventosResultadosBusqueda></local:PaginaEventosResultadosBusqueda>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Establecimientos" IconImageSource="icono_tienda.png">
+        <x:Arguments>
+            <local:PaginaEstablecimientosResultadosBusqueda></local:PaginaEstablecimientosResultadosBusqueda>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

@@ -1,4 +1,5 @@
 ﻿using QPlan.Models;
+using QPlan.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,14 +13,14 @@ namespace QPlan.ViewModels
 
         public PaginaBusquedaViewModel(INavigation navigation) : base(navigation)
         {
-
+            this.Navigation = navigation;
         }
 
 
-        public Task Search(SearchParameters parameters)
+        public async Task Search(SearchParameters parameters)
         {
-            
-            return null;
+            await Navigation.PushAsync(new MainPagePaginasBusqueda());
+            return;
         }
 
         public void OnAppearing()
