@@ -27,6 +27,8 @@
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="140"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Text="Categoría" Grid.Row="1" Grid.Column="1"></Label>
             <Label Text="Todas las categorias" Grid.Row="3" Grid.Column="1" TextColor="Black"></Label>
@@ -48,6 +50,7 @@
             <Label Text="Todas las categorias" Grid.Row="15" Grid.Column="1" TextColor="Black"></Label>
             <ImageButton Source="chebron.png" Grid.Row="15" Grid.Column="1" HorizontalOptions="End" BackgroundColor="Transparent"></ImageButton>
             <Line BackgroundColor="Black" Grid.Row="16" Grid.Column="1"></Line>
+            <Button Text="Aplicar filtros" Grid.Column="1" Grid.Row="18" BackgroundColor="Transparent" BorderColor="black" BorderWidth="1" CornerRadius="10"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
