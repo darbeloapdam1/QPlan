@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QPlan.Views.PaginasFiltrar.PaginaFiltrar"
+             Title="Filtrar">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="370"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="5"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="Categoría" Grid.Row="1" Grid.Column="1"></Label>
+            <Label Text="Todas las categorias" Grid.Row="3" Grid.Column="1" TextColor="Black"></Label>
+            <ImageButton Source="chebron.png" Grid.Row="3" Grid.Column="1" HorizontalOptions="End" BackgroundColor="Transparent"></ImageButton>
+            <Line BackgroundColor="Black" Grid.Row="4" Grid.Column="1"></Line>
+            <Label Text="Distancia" Grid.Row="6" Grid.Column="1"></Label>
+            <Label Text="Sin límite" x:Name="lblDistancia" Grid.Row="6" Grid.Column="1" HorizontalOptions="End" FontSize="12" ></Label>
+            <Slider x:Name="sldDistancia" Maximum="1000" ValueChanged="Slider_ValueChanged" Grid.Row="7" Grid.Column="1"></Slider>
+            <Line BackgroundColor="black" Grid.Row="8" Grid.Column="1"></Line>
+            <Label Text="Precio" Grid.Row="10" Grid.Column="1"></Label>
+            <Label Text="Desde:" Grid.Row="11" Grid.Column="1"></Label>
+            <Entry x:Name="entPrecioDesde" Grid.Row="11" Grid.Column="1" Margin="50,5,240,0"></Entry>
+            <Label Text="€" Grid.Row="11" Grid.Column="1" Margin="130,10,0,0" FontSize="10"></Label>
+            <Label Text="Hasta:" Grid.Row="11" Grid.Column="1" Margin="150,0,0,0"></Label>
+            <Entry x:Name="entPrecioHasta" Grid.Row="11" Grid.Column="1" Margin="200,5,90,0"></Entry>
+            <Label Text="€" Grid.Row="11" Grid.Column="1" Margin="280,10,0,0" FontSize="10"></Label>
+            <Line BackgroundColor="black" Grid.Row="12" Grid.Column="1"></Line>
+            <Label Text="Lugar" Grid.Row="14" Grid.Column="1"></Label>
+            <Label Text="Todas las categorias" Grid.Row="15" Grid.Column="1" TextColor="Black"></Label>
+            <ImageButton Source="chebron.png" Grid.Row="15" Grid.Column="1" HorizontalOptions="End" BackgroundColor="Transparent"></ImageButton>
+            <Line BackgroundColor="Black" Grid.Row="16" Grid.Column="1"></Line>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

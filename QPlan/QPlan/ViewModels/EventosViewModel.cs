@@ -1,6 +1,7 @@
 ﻿using QPlan.Models;
 using QPlan.Services;
 using QPlan.Views;
+using QPlan.Views.PaginasFiltrar;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -101,7 +102,7 @@ namespace QPlan.ViewModels
 
         public async Task ShowFilterPage()
         {
-            //await Navigation.PushAsync();
+            await Navigation.PushAsync(new PaginaFiltrar());
         }
     }
 }

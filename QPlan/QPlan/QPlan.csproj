@@ -48,5 +48,8 @@
     <EmbeddedResource Update="Views\PaginasBusqueda\PaginaTodosResultadosBusqueda.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\PaginasFiltrar\PaginaFiltrar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
