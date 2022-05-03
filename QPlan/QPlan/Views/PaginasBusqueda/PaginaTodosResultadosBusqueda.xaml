@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QPlan.Views.PaginasBusqueda.PaginaTodosResultadosBusqueda"
              xmlns:local="clr-namespace:QPlan.ViewModels.PaginasBusqueda"
-             xmlns:model="clr-namespace:QPlan.Models">
+             xmlns:model="clr-namespace:QPlan.Models"
+             NavigationPage.HasNavigationBar="False">
     <RefreshView x:DataType="local:TodosResultadosBusquedaViewModel" Command="{Binding LoadObjectsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="BaseModelsListView" ItemsSource="{Binding BaseModels}" SelectionMode="None" Margin="20,20,0,0" HorizontalOptions="Center">
             <CollectionView.ItemTemplate>
@@ -31,7 +32,7 @@
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer
                                 NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:EventosResultadosBusquedaViewModel}}, Path=EventoTapped}"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:TodosResultadosBusquedaViewModel}}, Path=ObjectTapped}"
                                 CommandParameter="{Binding .}">
                             </TapGestureRecognizer>
                         </Grid.GestureRecognizers>

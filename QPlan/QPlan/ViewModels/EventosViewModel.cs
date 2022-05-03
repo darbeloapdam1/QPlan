@@ -18,6 +18,7 @@ namespace QPlan.ViewModels
         public ObservableCollection<Evento> Eventos { get; }
         public Command<Evento> EventoTapped { get; }
         public Command LoadEventosCommand { get; }
+        public Command OnFiltrarTapped { get; }
         public bool isBusy;
 
         public EventosViewModel(INavigation navigation) : base(navigation)
@@ -26,6 +27,7 @@ namespace QPlan.ViewModels
             EventoTapped = new Command<Evento>(OnEventoSelected);
             LoadEventosCommand = new Command(async () => await ExecuteLoadEventosAsync());
             Eventos = new ObservableCollection<Evento>();
+            OnFiltrarTapped = new Command(async () => await ShowFilterPage());
         }
 
         public bool IsBusy
@@ -95,6 +97,11 @@ namespace QPlan.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        public async Task ShowFilterPage()
+        {
+            //await Navigation.PushAsync();
         }
     }
 }

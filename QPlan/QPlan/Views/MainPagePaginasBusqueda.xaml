@@ -2,7 +2,9 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QPlan.Views.MainPagePaginasBusqueda"
-            xmlns:local="clr-namespace:QPlan.Views.PaginasBusqueda">
+            xmlns:local="clr-namespace:QPlan.Views.PaginasBusqueda"
+            NavigationPage.HasNavigationBar="True"
+            NavigationPage.HasBackButton="True">
     <NavigationPage Title="Todo" IconImageSource="icono_busqueda_90px.png">
         <x:Arguments>
             <local:PaginaTodosResultadosBusqueda></local:PaginaTodosResultadosBusqueda>
