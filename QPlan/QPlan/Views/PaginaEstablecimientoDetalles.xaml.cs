@@ -18,7 +18,7 @@ namespace QPlan.Views
         public PaginaEstablecimientoDetalles(Establecimiento establecimiento)
         {
             InitializeComponent();
-            BindingContext = _viewModel = new EstablecimientoDetallesViewModel(establecimiento);
+            BindingContext = _viewModel = new EstablecimientoDetallesViewModel(establecimiento, Navigation);
         }
     }
 }

@@ -1,22 +1,29 @@
-﻿using QPlan.Models;
+﻿using Android.Content.Res;
+using QPlan.Models;
+using QPlan.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace QPlan.ViewModels
 {
-    public class EstablecimientoDetallesViewModel : INotifyPropertyChanged
+    public class EstablecimientoDetallesViewModel : BaseViewModel
     {
         public bool isBusy = false;
         public Establecimiento establecimiento;
         public Command LoadEstablecimientoCommand { get; }
-        public EstablecimientoDetallesViewModel(Establecimiento establecimiento)
+        public Command OnVerEventosTapped { get; }
+        public EstablecimientoDetallesViewModel(Establecimiento establecimiento, INavigation navigation) : base(navigation)
         {
+            this.Navigation = navigation;
             Establecimiento = establecimiento;
             //LoadEstablecimientoCommand = new Command(async () => await ExecuteLoadEstablecimientoAsync());
+            OnVerEventosTapped = new Command(async () => await ShowEventosPage());
         }
 
         public bool IsBusy
@@ -84,16 +91,9 @@ namespace QPlan.ViewModels
 
         //}
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        public async Task ShowEventosPage()
         {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            await Navigation.PushAsync(new PaginaEventos());
         }
     }
 }

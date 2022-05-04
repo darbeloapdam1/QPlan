@@ -4,6 +4,12 @@
              x:Class="QPlan.Views.PaginaEstablecimientoDetalles"
              xmlns:local="clr-namespace:QPlan.ViewModels"
              Title="{Binding Nombre}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ver eventos"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding OnVerEventosTapped}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <RefreshView x:DataType="local:EstablecimientoDetallesViewModel" Command="{Binding LoadEstablecimientoCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
             <Grid>
