@@ -1,6 +1,7 @@
 ﻿using QPlan.Models;
 using QPlan.Services;
 using QPlan.Views;
+using QPlan.Views.PaginasFiltrar;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,12 +20,14 @@ namespace QPlan.ViewModels
         public ObservableCollection<Establecimiento> Establecimientos { get; }
         public Command<Establecimiento> EstablecimientoTapped { get; }
         public Command LoadEstablecimientosCommand { get; }
+        public Command OnFiltrarTapped { get; }
         public EstablecimientosViewModel(INavigation navigation) : base(navigation)
         {
             this.Navigation = navigation;
             EstablecimientoTapped = new Command<Establecimiento>(OnEstablecimientoSelected);
             LoadEstablecimientosCommand = new Command(async () => await ExecuteLoadEstablecimientosAsync());
             Establecimientos = new ObservableCollection<Establecimiento>();
+            OnFiltrarTapped = new Command(async () => await ShowFilterPage());
         }
 
         public bool IsBusy
@@ -70,6 +73,11 @@ namespace QPlan.ViewModels
         {
             _selectedEstablecimiento = null;
             IsBusy = true;
+        }
+
+        public async Task ShowFilterPage()
+        {
+            await Navigation.PushAsync(new PaginaFiltrar());
         }
     }
 }

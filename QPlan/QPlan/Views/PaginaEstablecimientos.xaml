@@ -5,6 +5,13 @@
              xmlns:local="clr-namespace:QPlan.ViewModels"
              xmlns:model="clr-namespace:QPlan.Models"
              Title="QPlan">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Filtrar"
+                     IconImageSource="icono_filtar_50px.png"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding OnFiltrarTapped}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <RefreshView x:DataType="local:EstablecimientosViewModel" Command="{Binding LoadEstablecimientosCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
             <CollectionView x:Name="EstablecimientosListView" ItemsSource="{Binding Establecimientos}" SelectionMode="None" Margin="20,20,0,0">
