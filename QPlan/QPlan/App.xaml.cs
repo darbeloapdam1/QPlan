@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QPlan.Views;
+using QPlan.Views.PaginasCuentaPublicar;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,7 @@ namespace QPlan
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPageCuentaPublicar();
         }
 
         protected override void OnStart()

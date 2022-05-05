@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QPlan.Views.PaginasCuentaPublicar.MainPageCuentaPublicar"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:local="clr-namespace:QPlan.Views.PaginasCuentaPublicar">
+    <NavigationPage Title="Mis eventos" IconImageSource="icono_evento.png">
+        <x:Arguments>
+            <local:PaginaMisEventos></local:PaginaMisEventos>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Mi establecimiento" IconImageSource="icono_tienda.png">
+        <x:Arguments>
+            <local:PaginaMiEstablecimiento></local:PaginaMiEstablecimiento>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Cuenta" IconImageSource="icono_pagina_cuenta.png">
+        <x:Arguments>
+            <local:PaginaCuentaPublicar></local:PaginaCuentaPublicar>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

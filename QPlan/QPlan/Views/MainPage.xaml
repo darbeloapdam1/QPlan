@@ -26,8 +26,4 @@
             <local:PaginaCuenta></local:PaginaCuenta>
         </x:Arguments>
     </NavigationPage>
-    <!--<local:PaginaEventos IconImageSource="icono_evento.png"></local:PaginaEventos>
-    <local:PaginaBusqueda IconImageSource="icono_busqueda_90px.png"></local:PaginaBusqueda>
-    <local:PaginaEstablecimientos IconImageSource="icono_tienda.png"></local:PaginaEstablecimientos>
-    <local:PaginaCuenta IconImageSource="icono_pagina_cuenta.png"></local:PaginaCuenta> -->
 </TabbedPage>

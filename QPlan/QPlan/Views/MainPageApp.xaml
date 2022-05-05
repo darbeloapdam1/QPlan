@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QPlan.Views.MainPageApp">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="logo_QPlan.png" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Label Text="from" HorizontalOptions="Center" VerticalOptions="End"></Label>
+            <Label Text="Diego Arbeloa" HorizontalOptions="Center" VerticalOptions="End"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

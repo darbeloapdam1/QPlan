@@ -109,6 +109,11 @@ namespace QPlan.Services
             }
             return est;
         }
+
+        public static Establecimiento GetUnEstablecimiento()
+        {
+            return GetEstablecimientos()[1];
+        }
     }
     
 }
