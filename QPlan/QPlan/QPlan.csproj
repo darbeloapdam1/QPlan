@@ -72,6 +72,9 @@
     <EmbeddedResource Update="Views\PaginasCuentaPublicar\PaginaModificarEstablecimiento.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\PaginasCuentaPublicar\PaginaNuevoEvento.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PaginasFiltrar\PaginaFiltrar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

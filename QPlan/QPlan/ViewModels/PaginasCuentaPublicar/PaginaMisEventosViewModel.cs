@@ -1,6 +1,7 @@
 ﻿using QPlan.Models;
 using QPlan.Services;
 using QPlan.Views;
+using QPlan.Views.PaginasCuentaPublicar;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,12 +17,14 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
         public ObservableCollection<Evento> Eventos { get; }
         public Command<Evento> EventoTapped { get; }
         public Command LoadEventosCommand { get; }
+        public Command NuevoEventoTapped { get; }
         public PaginaMisEventosViewModel(INavigation navigation) : base(navigation)
         {
             this.Navigation = navigation;
             EventoTapped = new Command<Evento>(OnEventoSelected);
             LoadEventosCommand = new Command(async () => await ExecuteLoadEventosAsync());
             Eventos = new ObservableCollection<Evento>();
+            NuevoEventoTapped = new Command(async () => await ShowPaginaNuevoEvento());
         }
 
         public bool IsBusy
@@ -68,6 +71,11 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
             {
                 IsBusy = false;
             }
+        }
+
+        public async Task ShowPaginaNuevoEvento()
+        {
+            await Navigation.PushAsync(new PaginaNuevoEvento());
         }
 
     }
