@@ -71,18 +71,14 @@ namespace QPlan.ViewModels
 
         public DateTime DiaHoraRealizacion
         {
-            get { return Evento.diaHoraRealizacion; }
-            set { Evento.diaHoraRealizacion = value; }
+            get { return Evento.dia; }
+            set { Evento.dia = value; }
         }
 
-        public string Hora
+        public TimeSpan Hora
         {
-            get { return ""; }
-        }
-
-        public string Fecha
-        {
-            get { return ""; }
+            get { return Evento.hora; }
+            set { Evento.hora = value; }
         }
 
         public double Precio

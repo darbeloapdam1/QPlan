@@ -71,7 +71,7 @@ namespace QPlan.Services
                 {
                     id = ids[i],
                     nombre = titulos[i],
-                    diaHoraRealizacion = diasHoras[i],
+                    dia = diasHoras[i],
                     precio = precios[i],
                     foto = fotos[i],
                     descripcion = "Fito & Fitipaldis anuncian su vuelta a la carretera con su gira “cada vez cadáver Tour”. " +

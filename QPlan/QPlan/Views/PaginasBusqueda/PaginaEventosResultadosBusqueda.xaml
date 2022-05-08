@@ -27,8 +27,8 @@
                         <Image Source="{Binding foto}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="1"></Image>
                         <Label Text="{Binding nombre}" Grid.Column="2" Grid.Row="0" Margin="0,5,0,0" FontSize="18"></Label>
                         <Label Text="Navarra Arena" Grid.Column="2" Grid.Row="1"></Label>
-                        <Label Text="{Binding Dia}" Grid.Column="2" Grid.Row="2"></Label>
-                        <Label Text="{Binding Hora}" Grid.Column="2" Grid.Row="3"></Label>
+                        <Label Text="{Binding dia}" Grid.Column="2" Grid.Row="2"></Label>
+                        <Label Text="{Binding hora}" Grid.Column="2" Grid.Row="3"></Label>
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer
                                 NumberOfTapsRequired="1"

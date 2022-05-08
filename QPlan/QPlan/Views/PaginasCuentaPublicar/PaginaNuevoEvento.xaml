@@ -37,19 +37,20 @@
                     <ColumnDefinition Width="380"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label Text="Título:" Grid.Column="1" Grid.Row="1" FontSize="18"></Label>
-                <Entry x:Name="entTitulo" Grid.Row="2" Grid.Column="1"></Entry>
+                <Entry x:Name="entTitulo" Grid.Row="2" Grid.Column="1" IsSpellCheckEnabled="True" TextChanged="entTitulo_TextChanged"></Entry>
                 <Label Text="Descripción:" Grid.Row="3" Grid.Column="1" FontSize="18"></Label>
-                <Editor x:Name="edtDescripcion" Grid.Row="4" Grid.Column="1"></Editor>
+                <Editor x:Name="edtDescripcion" Grid.Row="4" Grid.Column="1" IsSpellCheckEnabled="True" TextChanged="edtDescripcion_TextChanged"></Editor>
                 <Label Text="Cuando es:" Grid.Row="5" Grid.Column="1" FontSize="18"></Label>
                 <Label Text="Día:" Grid.Row="6" Grid.Column="1" FontSize="14"></Label>
                 <Label Text="Hora:" Grid.Row="6" Grid.Column="1" FontSize="14" HorizontalOptions="Center" Margin="10,0,0,0"></Label>
-                <DatePicker x:Name="pckDia" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" WidthRequest="100"></DatePicker>
-                <TimePicker x:Name="pckHora" Grid.Row="7" Grid.Column="1" HorizontalOptions="Center" WidthRequest="90" Margin="50,0,0,0"></TimePicker>
+                <DatePicker x:Name="pckDia" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" WidthRequest="100" DateSelected="pckDia_DateSelected"></DatePicker>
+                <TimePicker x:Name="pckHora" Grid.Row="7" Grid.Column="1" HorizontalOptions="Center" WidthRequest="90" Margin="50,0,0,0"
+                            PropertyChanged="pckHora_PropertyChanged"></TimePicker>
                 <Label Text="Edad mínima:" Grid.Row="8" Grid.Column="1" FontSize="18" VerticalOptions="End"></Label>
                 <Label Text="Precio:" Grid.Row="8" Grid.Column="1" FontSize="18" VerticalOptions="End" HorizontalOptions="Center" Margin="30,0,0,0"></Label>
-                <Entry x:Name="entEdad" Grid.Row="9" Grid.Column="1" HorizontalOptions="Start" WidthRequest="50"></Entry>
+                <Entry x:Name="entEdad" Grid.Row="9" Grid.Column="1" HorizontalOptions="Start" WidthRequest="50" TextChanged="entEdad_TextChanged"></Entry>
                 <Label Text="años" Grid.Row="9" Grid.Column="1" VerticalTextAlignment="End" HorizontalTextAlignment="Start" Margin="55,0,0,5" FontSize="10"></Label>
-                <Entry x:Name="entPrecio" Grid.Row="9" Grid.Column="1" HorizontalOptions="Center" WidthRequest="50" Margin="20,0,0,0"></Entry>
+                <Entry x:Name="entPrecio" Grid.Row="9" Grid.Column="1" HorizontalOptions="Center" WidthRequest="50" Margin="20,0,0,0" TextChanged="entPrecio_TextChanged"></Entry>
                 <Label Text="€" Grid.Row="9" Grid.Column="1" VerticalTextAlignment="End" HorizontalTextAlignment="Center" Margin="80,0,0,5" FontSize="10"></Label>
                 <Label Text="Imagen icono:" Grid.Row="10" Grid.Column="1" FontSize="18"></Label>
                 <Button x:Name="btnImagenIcono" Text="Seleccionar imagen" Grid.Row="11" Grid.Column="1" HorizontalOptions="Start" FontSize="10"></Button>
@@ -100,7 +101,7 @@
                     </Grid.GestureRecognizers>
                 </Grid>
                 <Label Text="Observaciones:" FontSize="18" Grid.Column="1" Grid.Row="18"></Label>
-                <Editor x:Name="edtObservaciones" Grid.Column="1" Grid.Row="19"></Editor>
+                <Editor x:Name="edtObservaciones" Grid.Column="1" Grid.Row="19" IsSpellCheckEnabled="True" TextChanged="edtObservaciones_TextChanged"></Editor>
                 <Button x:Name="btnPrevisualizar" Text="Previsualizar evento" Grid.Row="21" Grid.Column="1" BackgroundColor="white" BorderColor="black" BorderWidth="1" CornerRadius="10" HorizontalOptions="Center" VerticalOptions="End"
                     WidthRequest="330" HeightRequest="40" Margin="0,0,0,10" Command="{Binding PrevisualizarEventoTapped}"></Button>
             </Grid>
