@@ -22,6 +22,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
             LugarTapped = new Command(async () => await ShowPaginaTipoLugar());
             PrevisualizarEventoTapped = new Command(async () => await ExecutePrevisualizarEvento ());
             evento = new Evento();
+            evento.foto = "evento2_fito_detalles.jfif";
         }
 
         public async Task ShowPaginaCategorias()

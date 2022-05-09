@@ -19,5 +19,23 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
         {
             get { return evento1.nombre; }
         }
+        public string Descripcion
+        {
+            get { return evento1.descripcion; }
+        }
+        public string Foto
+        {
+            get { return evento1.foto; }
+        }
+        public string PrecioEuros
+        {
+            get { return evento1.precio + "€"; }
+        }
+        public string Hora
+        {
+            get { return evento1.hora.ToString(@"hh\:mm") + "h"; }
+        }
     }
 }
+
+//https://docs.microsoft.com/es-es/xamarin/xamarin-forms/app-fundamentals/dependency-service/photo-picker

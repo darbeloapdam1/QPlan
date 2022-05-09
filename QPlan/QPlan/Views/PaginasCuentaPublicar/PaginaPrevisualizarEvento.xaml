@@ -1,12 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QPlan.Views.PaginasCuentaPublicar.PaginaPrevisualizarEvento">
+             x:Class="QPlan.Views.PaginasCuentaPublicar.PaginaPrevisualizarEvento"
+             xmlns:local="clr-namespace:QPlan.ViewModels.PaginasCuentaPublicar">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Publicar"
+                     Order="Primary"
+                     Priority="0">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Nombre}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:DataType="local:PaginaPrevisualizarEventoViewModel">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="500"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding Foto}" Grid.Row="0"></Image>
+            <Frame Grid.Column="0" Grid.Row="1" CornerRadius="10" BorderColor="black"></Frame>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition Width="350"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Nombre}" Grid.Row="1" Grid.Column="1" FontSize="30"></Label>
+                <Label Text="Navarra Arena" Grid.Row="2" Grid.Column="1" FontSize="20"></Label>
+                <Label Text="{Binding Descripcion}" Grid.Row="3" Grid.Column="1" FontSize="14"></Label>
+                <Label Text="Cuando es:" Grid.Row="4" Grid.Column="1"></Label>
+                <Label Text="23 de Abril de 2022" Grid.Row="5" Grid.Column="1"></Label>
+                <Label Text="{Binding Hora}" Grid.Row="6" Grid.Column="1"></Label>
+                <Label Text="Precios:" Grid.Row="8" Grid.Column="1"></Label>
+                <Label Text="{Binding PrecioEuros}" Grid.Row="9" Grid.Column="1"></Label>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
