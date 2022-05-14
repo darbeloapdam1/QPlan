@@ -9,11 +9,11 @@ namespace QPlan.Services
 {
     public static class DataStore
     {
-        public static async Task<List<Evento>> GetEventosAsync()
+        /*public static async Task<List<Evento>> GetEventosAsync()
         {
             var eventos = await DataGetJson.GetEventosAsync();
             return eventos;
-        }
+        }*/
 
         public static List<Evento> getEventos()
         {

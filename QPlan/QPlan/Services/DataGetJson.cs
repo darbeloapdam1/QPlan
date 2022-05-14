@@ -12,7 +12,7 @@ namespace QPlan.Services
     {
         public static readonly string AllEventsRequest = "https://localhost:44368/api/Eventoes";
 
-        public static async Task<Evento> GetEventoAsync()
+        /*public static async Task<Evento> GetEventoAsync()
         {
             try
             {
@@ -55,7 +55,7 @@ namespace QPlan.Services
                 Console.WriteLine("====>Error<====" + ex);
             }
             return null;
-        }
+        }*/
 
         public static List<Evento> GetEventos()
         {
@@ -69,7 +69,7 @@ namespace QPlan.Services
             {
                 Evento ev = new Evento()
                 {
-                    id = ids[i],
+                    Id = ids[i],
                     nombre = titulos[i],
                     dia = diasHoras[i],
                     precio = precios[i],
@@ -96,7 +96,7 @@ namespace QPlan.Services
             {
                 Establecimiento esta = new Establecimiento()
                 {
-                    id = ids[i],
+                    Id = ids[i],
                     nombre = nombres[i],
                     direccion = direcciones[i],
                     horario = horarios[i],
