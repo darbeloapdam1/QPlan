@@ -19,5 +19,15 @@ namespace QPlan.Views
             InitializeComponent();
             BindingContext = _viewModel = new PaginaLoginViewModel(Navigation);
         }
+
+        private void entUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewModel.Usuario = entUsuario.Text;
+        }
+
+        private void entContra_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _viewModel.Pass = entContra.Text;
+        }
     }
 }

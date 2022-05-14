@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QPlan.Views.PaginaLogin">
+             x:Class="QPlan.Views.PaginaLogin"
+             xmlns:local="clr-namespace:QPlan.ViewModels">
     <ContentPage.Content>
-        <Grid>
+        <Grid x:DataType="local:PaginaLoginViewModel">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
@@ -22,10 +23,10 @@
             <Image Source="logo_QPlan.jpeg" Grid.Row="0" VerticalOptions="End" WidthRequest="100" HeightRequest="100" Grid.Column="0" Grid.ColumnSpan="3"></Image>
             <Label Text="Iniciar sesión" Grid.Row="2" Grid.Column="1" FontSize="18"></Label>
             <Label Text="Usuario:" Grid.Row="3" Grid.Column="1"></Label>
-            <Entry x:Name="entUsuario" Grid.Row="4" Grid.Column="1"></Entry>
+            <Entry x:Name="entUsuario" Grid.Row="4" Grid.Column="1" TextChanged="entUsuario_TextChanged"></Entry>
             <Label Text="Contraseña:" Grid.Row="5" Grid.Column="1"></Label>
-            <Entry x:Name="entContra" IsPassword="True" Grid.Row="6" Grid.Column="1"></Entry>
-            <Button Text="Iniciar sesión" Grid.Row="8" Grid.Column="1"></Button>
+            <Entry x:Name="entContra" IsPassword="True" Grid.Row="6" Grid.Column="1" TextChanged="entContra_TextChanged"></Entry>
+            <Button Text="Iniciar sesión" Grid.Row="8" Grid.Column="1" Command="{Binding OnIniciarSesionTapped}"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

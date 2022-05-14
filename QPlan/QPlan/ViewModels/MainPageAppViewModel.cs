@@ -27,21 +27,24 @@ namespace QPlan.ViewModels
             if (await fileReader.CheckLoginData())
             {
                 string[] loginData = await fileReader.GetLoginData();//comprobar que existen datos de inicio de sesión
-                var userList = await dataBase.CheckUserAsync(loginData[0], loginData[1]);//comprobar que esos datos se corresponden con un usuario guardado en la bd
-                if(userList.Count != 0)
+                if(await dataBase.CheckUserAsync(loginData[0], loginData[1]))//comprobar que esos datos se corresponden con un usuario guardado en la bd
                 {
-                    User user = userList[0];
-                    if (user.esEstablecimiento == 1)//comprobar si es cuenta de establecimiento
+                    var userList = await dataBase.GetUserAsync(loginData[0], loginData[1]);
+                    if (userList.Count != 0)
                     {
-                        await Navigation.PushModalAsync(new MainPageCuentaPublicar());
-                        return;
+                        User user = userList[0];
+                        if (user.esEstablecimiento == 1)//comprobar si es cuenta de establecimiento
+                        {
+                            await Navigation.PushModalAsync(new MainPageCuentaPublicar(user));
+                            return;
+                        }
+                        else
+                        {
+                            await Navigation.PushModalAsync(new MainPage());
+                            return;
+                        }
                     }
-                    else
-                    {
-                        await Navigation.PushModalAsync(new MainPage());
-                        return;
-                    }
-                }
+                }                
             }
             await Navigation.PushModalAsync(new PaginaLogin());
         }

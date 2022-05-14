@@ -22,7 +22,7 @@ namespace QPlan.Services
             DataBase = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public Task<List<User>> CheckUserAsync(string name, string pass)
+        public Task<List<User>> GetUserAsync(string name, string pass)
         {
             return DataBase.QueryAsync<User>("SELECT * FROM [User] WHERE name LIKE('" + name +"') and password LIKE('" + pass + "')");
         }
@@ -37,6 +37,15 @@ namespace QPlan.Services
             {
                 return DataBase.InsertAsync(user);
             }
+        }
+
+        public async Task<bool> CheckUserAsync(string name, string pass)
+        {
+            if((await GetUserAsync(name, pass)).Count != 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
