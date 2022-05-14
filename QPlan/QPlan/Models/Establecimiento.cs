@@ -13,5 +13,16 @@ namespace QPlan.Models
         public string[] redesSociales { get; set; }
         public string descripcion { get; set; }
         public string telefono { get; set; }
+
+        public string GetHorario()
+        {
+            string resul = "";
+            string[] dias = { "Lunes: ", "Martes: ", "Miércoles: ", "Jueves: ", "Viernes: ", "Sábado: ", "Domingo: " };
+            foreach(string dia in dias)
+            {
+                resul += dia + horario + "&#x0a;";
+            }
+            return resul;
+        }
     }
 }
