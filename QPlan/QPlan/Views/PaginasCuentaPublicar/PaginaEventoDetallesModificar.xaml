@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="QPlan.Views.PaginaEventoDetalles" BackgroundColor="Transparent"
-             xmlns:model="clr-namespace:QPlan.Models"
-             xmlns:local="clr-namespace:QPlan.ViewModels"
+             x:Class="QPlan.Views.PaginasCuentaPublicar.PaginaEventoDetallesModificar"
+             xmlns:local="clr-namespace:QPlan.ViewModels.PaginasCuentaPublicar"
              Title="{Binding Titulo}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Modificar"
+                     Priority="0"
+                     Order="Default"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <RefreshView x:DataType="local:EventoDetallesViewModel" Command="{Binding LoadEventoCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <RefreshView x:DataType="local:PaginaEventoDetallesModificarViewModel" Command="{Binding LoadEventoCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"></RowDefinition>

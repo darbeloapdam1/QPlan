@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="80"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="entSearchBar" Placeholder="¿A donde te apetece ir?" PlaceholderColor="LightGray" Grid.Row="0" Grid.Column="0"></Entry>
-                <Button x:Name="btnBuscar" Text="Buscar" Grid.Row="0" Grid.Column="1" Clicked="btnBuscar_Clicked"></Button>
+                <Button x:Name="btnBuscar" Text="Buscar" Grid.Row="0" Grid.Column="1"></Button>
             </Grid>
             <Label Text="Categorías" Grid.Column="1" Grid.Row="3"></Label>
             <Line BackgroundColor="black" Grid.Column="1" Grid.Row="4" Margin="0,0,30,0"></Line>

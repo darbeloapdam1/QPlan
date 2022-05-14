@@ -7,7 +7,6 @@
              Title="QPlan">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Filtrar"
-                     IconImageSource="icono_filtar_50px.png"
                      Order="Primary"
                      Priority="0"
                      Command="{Binding OnFiltrarTapped}"></ToolbarItem>
@@ -32,7 +31,7 @@
                             </Grid.ColumnDefinitions>
                             <Frame Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="5" BorderColor="black" CornerRadius="10"></Frame>
                             <Frame Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Grid.RowSpan="5" BorderColor="black" CornerRadius="10"></Frame>
-                            <Image Source="{Binding foto}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="1"></Image>
+                            <Image Source="{Binding foto}" Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" Grid.ColumnSpan="1" Aspect="AspectFill"></Image>
                             <Label Text="{Binding nombre}" Grid.Column="2" Grid.Row="0" Margin="0,5,0,0" FontSize="18"></Label>
                             <Label Text="{Binding direccion}" Grid.Column="2" Grid.Row="1"></Label>
                             <Label Text="{Binding horario}" Grid.Column="2" Grid.Row="2"></Label>

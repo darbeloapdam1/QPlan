@@ -17,7 +17,7 @@ namespace QPlan.ViewModels
         }
 
 
-        public async Task Search(SearchParameters parameters)
+        public async Task Search()
         {
             await Navigation.PushAsync(new MainPagePaginasBusqueda());
             return;

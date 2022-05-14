@@ -55,7 +55,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
 
         public string Horario
         {
-            get { return Establecimiento1.horario; }
+            get { return Establecimiento1.GetHorario(); }
         }
 
         public string EdadMinima

@@ -12,7 +12,7 @@ namespace QPlan
         {
             InitializeComponent();
 
-            MainPage = new MainPageCuentaPublicar();
+            MainPage = new MainPageApp();
         }
 
         protected override void OnStart()

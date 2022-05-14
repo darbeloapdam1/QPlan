@@ -9,6 +9,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
     public class PaginaPrevisualizarEventoViewModel  : BaseViewModel
     {
         public Evento evento1;
+        public Command OnVistaReducidaTapped { get; }
         public PaginaPrevisualizarEventoViewModel(INavigation navigation, Evento evento) : base(navigation)
         {
             this.Navigation = navigation;

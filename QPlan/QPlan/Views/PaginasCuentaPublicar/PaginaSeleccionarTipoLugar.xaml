@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QPlan.Views.PaginasCuentaPublicar.PaginaSeleccionarTipoLugar"
+             xmlns:local="clr-namespace:QPlan.ViewModels.PaginasCuentaPublicar"
+             Title="Tipo lugar">
+    <ContentPage.Content>
+        <Grid x:DataType="local:PaginaSeleccionarTipoLugarViewModel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="360"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="260"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="Cubierto" FontSize="16" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swtCubierto" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swtCubierto_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="2"></Line>
+            <Label Text="Al aire libre" FontSize="16" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcAireLibre" Grid.Row="3" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcAireLibre_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="4"></Line>
+            <Label Text="Por la calle" FontSize="16" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcPorCalle" Grid.Row="5" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcPorCalle_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="6"></Line>
+            <Label Text="Fuera de la ciudad" FontSize="16" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcFueraCiudad" Grid.Row="7" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcFueraCiudad_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="8"></Line>
+            <Button Text="Guardar preferencias" Grid.Column="1" Grid.Row="10" BackgroundColor="Transparent" BorderColor="black" 
+                    BorderWidth="1" CornerRadius="10" Command="{Binding OnGuardarTapped}"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,7 @@
-﻿using QPlan.Views.PaginasCuentaPublicar;
+﻿using QPlan.Models;
+using QPlan.Services;
+using QPlan.Views;
+using QPlan.Views.PaginasCuentaPublicar;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,24 +12,40 @@ namespace QPlan.ViewModels
 {
     public class MainPageAppViewModel : BaseViewModel
     {
-        private bool cuentaPublicar = true;
+        FileReader fileReader;
+        QPlanDataBase dataBase;
         public MainPageAppViewModel(INavigation navigation) : base(navigation)
         {
             this.Navigation = navigation;
+            fileReader = new FileReader();
+            dataBase = new QPlanDataBase();
             LaunchApp();
         }
 
         private async Task LaunchApp()
         {
-            if (cuentaPublicar)
+            if (await fileReader.CheckLoginData())
             {
-                await Navigation.PushModalAsync(new MainPageCuentaPublicar());
+                string[] loginData = await fileReader.GetLoginData();//comprobar que existen datos de inicio de sesión
+                var userList = await dataBase.CheckUserAsync(loginData[0], loginData[1]);//comprobar que esos datos se corresponden con un usuario guardado en la bd
+                if(userList.Count != 0)
+                {
+                    User user = userList[0];
+                    if (user.esEstablecimiento == 1)//comprobar si es cuenta de establecimiento
+                    {
+                        await Navigation.PushModalAsync(new MainPageCuentaPublicar());
+                        return;
+                    }
+                    else
+                    {
+                        await Navigation.PushModalAsync(new MainPage());
+                        return;
+                    }
+                }
             }
-            else
-            {
-                await Navigation.PushModalAsync(new MainPage());
-            }
+            await Navigation.PushModalAsync(new PaginaLogin());
         }
+
 
     }
 }

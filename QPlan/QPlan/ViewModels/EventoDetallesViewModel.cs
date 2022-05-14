@@ -43,10 +43,10 @@ namespace QPlan.ViewModels
 
         public int EventoId
         {
-            get { return Evento.id; }
+            get { return Evento.Id; }
             set
             {
-                Evento.id = value;
+                Evento.Id = value;
                 OnPropertyChanged("EventoId");
             }
         }

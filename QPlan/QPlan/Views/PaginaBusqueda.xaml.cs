@@ -28,7 +28,7 @@ namespace QPlan.Views
             _viewModel.OnAppearing();
         }
 
-        private void btnBuscar_Clicked(object sender, EventArgs e)
+        /*private void btnBuscar_Clicked(object sender, EventArgs e)
         {
             SearchParameters parameters = new SearchParameters();
             if (chkDeporte.IsChecked)
@@ -72,6 +72,6 @@ namespace QPlan.Views
                 parameters.FueraCiudad = true;
             }
             _viewModel.Search(parameters);
-        }
+        }*/
     }
 }

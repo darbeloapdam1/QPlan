@@ -41,7 +41,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
         {
             if (evento == null)
                 return;
-            await Navigation.PushAsync(new PaginaEventoDetalles(evento));
+            await Navigation.PushAsync(new PaginaEventoDetallesModificar(evento));
         }
 
         public void OnAppearing()

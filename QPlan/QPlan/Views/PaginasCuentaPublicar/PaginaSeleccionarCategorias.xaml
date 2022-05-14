@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QPlan.Views.PaginasCuentaPublicar.PaginaSeleccionarCategorias"
+             xmlns:local="clr-namespace:QPlan.ViewModels.PaginasCuentaPublicar"
+             Title="Categorias">
+    
+    <ContentPage.Content>
+        <Grid x:DataType="local:PaginaSeleccionarCategoriasViewModel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="360"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="1"></RowDefinition>
+                <RowDefinition Height="160"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Text="Musical" FontSize="16" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swtMusical" Grid.Row="1" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swtMusical_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="2"></Line>
+            <Label Text="Fiesta" FontSize="16" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcFiesta" Grid.Row="3" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcFiesta_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="4"></Line>
+            <Label Text="Teatro" FontSize="16" Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcTeatro" Grid.Row="5" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcTeatro_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="6"></Line>
+            <Label Text="Deporte" FontSize="16" Grid.Row="7" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcDeporte" Grid.Row="7" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcDeporte_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="8"></Line>
+            <Label Text="Cultura" FontSize="16" Grid.Row="9" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcCultura" Grid.Row="9" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcCultura_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="10"></Line>
+            <Label Text="Concierto" FontSize="16" Grid.Row="11" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="End"></Label>
+            <Switch x:Name="swcConcierto" Grid.Row="11" Grid.Column="1" HorizontalOptions="End" VerticalOptions="End"
+                    Toggled="swcConcierto_Toggled"></Switch>
+            <Line BackgroundColor="Black" Grid.Column="1" Grid.Row="12"></Line>
+            <Button Text="Guardar preferencias" Grid.Column="1" Grid.Row="14" BackgroundColor="Transparent" BorderColor="black" 
+                    BorderWidth="1" CornerRadius="10" Command="{Binding OnGuardarTapped}"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

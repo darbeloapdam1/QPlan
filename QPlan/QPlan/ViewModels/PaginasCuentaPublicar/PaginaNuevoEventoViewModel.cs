@@ -11,7 +11,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
 {
     public class PaginaNuevoEventoViewModel : BaseViewModel
     {
-        public Evento evento;
+        public static Evento evento;
         public Command CategoriasTapped { get; }
         public Command LugarTapped { get; }
         public Command PrevisualizarEventoTapped { get; }
@@ -27,17 +27,54 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
 
         public async Task ShowPaginaCategorias()
         {
-            await Navigation.PushAsync(new PaginaTipoCategorias());
+            await Navigation.PushAsync(new PaginaSeleccionarCategorias());
+        }
+
+        private bool ComprobarEvento()
+        {
+            /*if (Titulo == "")
+            {
+                return false;
+            }
+            if (Descripcion == "")
+            {
+                return false;
+            }
+            if (Hora == null)
+            {
+                return false;
+            }
+            if (DateTime.Compare(Fecha, DateTime.Now) == 0 || DateTime.Compare(Fecha, DateTime.Now) < 0)
+            {
+                return false;
+            }
+            if (Array.IndexOf(evento.categorias, 1) == -1)
+            {
+                return false;
+            }
+            if (Array.IndexOf(evento.tipoLugar, 1) == -1)
+            {
+                return false;
+            }*/
+
+            return true;
         }
 
         public async Task ShowPaginaTipoLugar()
         {
-            await Navigation.PushAsync(new PaginaTipoLugar());
+            await Navigation.PushAsync(new PaginaSeleccionarTipoLugar());
         }
 
         public async Task ExecutePrevisualizarEvento()
         {
-            await Navigation.PushAsync(new PaginaPrevisualizarEvento(evento));
+            if (ComprobarEvento())
+            {
+                await Navigation.PushAsync(new PaginaPrevisualizarEvento(evento));
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "Los datos de algunos campos no son correctos", "Aceptar");
+            }
         }
 
         public string Titulo
