@@ -32,7 +32,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
 
         private bool ComprobarEvento()
         {
-            /*if (Titulo == "")
+            if (Titulo == "")
             {
                 return false;
             }
@@ -55,7 +55,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
             if (Array.IndexOf(evento.tipoLugar, 1) == -1)
             {
                 return false;
-            }*/
+            }
 
             return true;
         }

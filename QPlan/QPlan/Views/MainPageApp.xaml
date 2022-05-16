@@ -7,7 +7,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Source="logo_QPlan.png" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+            <Image Source="icon_QPlan.png" HorizontalOptions="Center" VerticalOptions="Center"></Image>
             <Label Text="from" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Margin="0,0,0,40"></Label>
             <Label Text="Diego Arbeloa" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Margin="0,0,0,20"></Label>
         </Grid>

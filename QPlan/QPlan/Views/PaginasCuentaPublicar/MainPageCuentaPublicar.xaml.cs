@@ -1,4 +1,6 @@
 ﻿using QPlan.Models;
+using QPlan.Services;
+using QPlan.ViewModels.PaginasCuentaPublicar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +16,31 @@ namespace QPlan.Views.PaginasCuentaPublicar
     public partial class MainPageCuentaPublicar : TabbedPage
     {
         public static User user;
-        public MainPageCuentaPublicar(User user1)
-        {
-            InitializeComponent();
+        public static Establecimiento establecimiento;
+        public static QPlanDataBase dataBase;
+        public MainPageCuentaPublicarViewModel _viewModel;
+        public MainPageCuentaPublicar(User user1, Establecimiento est)
+        {            
             user = user1;
+            establecimiento = est;
+            dataBase = new QPlanDataBase();
+            InitializeComponent();
+            BindingContext = _viewModel = new MainPageCuentaPublicarViewModel(user1);
+        }
+
+        public static User User
+        {
+            get { return user; }
+        }
+        public static Establecimiento Establecimiento
+        {
+            get { return establecimiento; }
+            set { establecimiento = value; }
+        }
+
+        public static QPlanDataBase DataBase
+        {
+            get { return dataBase; }
         }
     }
 }

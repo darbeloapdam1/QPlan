@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QPlan.Android", "QPlan\QPla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QPlan.iOS", "QPlan\QPlan.iOS\QPlan.iOS.csproj", "{228F925D-7D76-4140-A38C-DAFB1B802580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QPlan", "QPlan\QPlan\QPlan.csproj", "{1833EA63-B724-4211-9578-EBE2F006D0F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QPlan", "QPlan\QPlan\QPlan.csproj", "{1833EA63-B724-4211-9578-EBE2F006D0F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,7 +38,6 @@ Global
 		{0144F492-49C4-4EC9-B257-A54F4B305BA2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{0144F492-49C4-4EC9-B257-A54F4B305BA2}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{228F925D-7D76-4140-A38C-DAFB1B802580}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{228F925D-7D76-4140-A38C-DAFB1B802580}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{228F925D-7D76-4140-A38C-DAFB1B802580}.Debug|Any CPU.Deploy.0 = Debug|iPhone
 		{228F925D-7D76-4140-A38C-DAFB1B802580}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{228F925D-7D76-4140-A38C-DAFB1B802580}.Debug|iPhone.Build.0 = Debug|iPhone

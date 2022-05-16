@@ -9,7 +9,7 @@ namespace QPlan.Services
 {
     public class QPlanDataBase
     {
-        static SQLiteAsyncConnection DataBase;
+        public static SQLiteAsyncConnection DataBase;
         public static readonly AsyncLazy<QPlanDataBase> InstanceUser = new AsyncLazy<QPlanDataBase>(async () =>
         {
             var instance = new QPlanDataBase();
@@ -20,22 +20,59 @@ namespace QPlan.Services
         public QPlanDataBase()
         {
             DataBase = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+            //InitializeDb();
         }
 
-        public Task<List<User>> GetUserAsync(string name, string pass)
+        private async void InitializeDb()
         {
-            return DataBase.QueryAsync<User>("SELECT * FROM [User] WHERE name LIKE('" + name +"') and password LIKE('" + pass + "')");
+            try
+            {
+                var tableInfoUser = DataBase.GetConnection().GetTableInfo("User");
+                if (tableInfoUser.Count <= 0)
+                {
+                    await DataBase.CreateTableAsync<User>();
+                }
+                //await DataBase.DropTableAsync<User>();
+                var tableInfoEstablecimiento = DataBase.GetConnection().GetTableInfo("Establecimiento");
+                if(tableInfoEstablecimiento.Count <= 0)
+                {
+                    await DataBase.CreateTableAsync<Establecimiento>();
+                }
+                //await DataBase.DropTableAsync<Establecimiento>();
+                var tableInfoEvento = DataBase.GetConnection().GetTableInfo("Evento");
+                if(tableInfoEvento.Count <= 0)
+                {
+                    await DataBase.CreateTableAsync<Evento>();
+                }
+                //await DataBase.DropTableAsync<Evento>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
-        public Task<int> SaveUserAsync(User user)
+        public async Task<List<User>> GetUserAsync(string name, string pass)
+        {
+            try
+            {
+                return await DataBase.QueryAsync<User>("SELECT * FROM [User] WHERE name LIKE('" + name + "') and password LIKE('" + pass + "')");
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return null;
+        }
+
+        public async Task<int> SaveUserAsync(User user)
         {
             if(user.Id != 0)
             {
-                return DataBase.UpdateAsync(user);
+                return await DataBase.UpdateAsync(user);
             }
             else
             {
-                return DataBase.InsertAsync(user);
+                return await DataBase .InsertAsync(user);
             }
         }
 
@@ -46,6 +83,31 @@ namespace QPlan.Services
                 return true;
             }
             return false;
+        }
+
+        public async Task<List<Establecimiento>> GetEstablecimientoAsync(int userId)
+        {
+            try
+            {
+                return await DataBase.QueryAsync<Establecimiento>("SELECT * FROM [Establecimiento] WHERE userId = " + userId + ";");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("==>Error<==" + ex);
+            }
+            return null;
+        }
+
+        public async Task<int> SaveEstablecimientoAsync(Establecimiento establecimiento)
+        {
+            if(establecimiento.Id != 0)
+            {
+                return await DataBase.UpdateAsync(establecimiento);
+            }
+            else
+            {
+                return await DataBase.InsertAsync(establecimiento);
+            }
         }
     }
 }

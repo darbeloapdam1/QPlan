@@ -24,6 +24,7 @@ namespace QPlan.ViewModels
 
         private async Task LaunchApp()
         {
+            //await fileReader.EraseLoginData();
             if (await fileReader.CheckLoginData())
             {
                 string[] loginData = await fileReader.GetLoginData();//comprobar que existen datos de inicio de sesión
@@ -35,20 +36,19 @@ namespace QPlan.ViewModels
                         User user = userList[0];
                         if (user.esEstablecimiento == 1)//comprobar si es cuenta de establecimiento
                         {
-                            await Navigation.PushModalAsync(new MainPageCuentaPublicar(user));
+                            Establecimiento est = (await dataBase.GetEstablecimientoAsync(user.Id))[0];
+                            await Navigation.PushModalAsync(new MainPageCuentaPublicar(user, est));
                             return;
                         }
                         else
                         {
-                            await Navigation.PushModalAsync(new MainPage());
+                            await Navigation.PushModalAsync(new MainPage(user));
                             return;
                         }
                     }
                 }                
             }
-            await Navigation.PushModalAsync(new PaginaLogin());
+            await Navigation.PushModalAsync(new NavigationPage(new PaginaLogin()));
         }
-
-
     }
 }

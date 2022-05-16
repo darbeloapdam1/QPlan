@@ -19,8 +19,8 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
         {
             this.Navigation = navigation;
             OnModificarTapped = new Command(async () => await ShowPageModificar());
-            LoadEstablecimientoCommand = new Command(async () => await ExecuteLoadEstablecimiento());
-            ExecuteLoadEstablecimiento();
+            LoadEstablecimientoCommand = new Command(async () => await ExecuteLoadEstablecimientoAsync());
+            ExecuteLoadEstablecimientoAsync();
         }
 
         public bool IsBusy
@@ -80,7 +80,7 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
 
         public string Telefono
         {
-            get { return "626 66 35 15"; }
+            get { return Establecimiento1.telefono; }
         }
 
         public void OnAppearing()
@@ -93,12 +93,13 @@ namespace QPlan.ViewModels.PaginasCuentaPublicar
             await Navigation.PushAsync(new PaginaModificarEstablecimiento(this.establecimiento));
         }
 
-        public async Task ExecuteLoadEstablecimiento()
+        public async Task ExecuteLoadEstablecimientoAsync()
         {
             IsBusy = true;
             try
             {
-                this.Establecimiento1 = DataGetJson.GetUnEstablecimiento();
+                Establecimiento1 = MainPageCuentaPublicar.Establecimiento;
+                //Establecimiento1 = (await MainPageCuentaPublicar.dataBase.GetEstablecimientoAsync(MainPageCuentaPublicar.user.Id))[0];
             }catch(Exception ex)
             {
                 Console.WriteLine(ex);

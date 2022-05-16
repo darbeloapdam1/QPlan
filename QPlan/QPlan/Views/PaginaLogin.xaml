@@ -2,31 +2,42 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QPlan.Views.PaginaLogin"
-             xmlns:local="clr-namespace:QPlan.ViewModels">
+             xmlns:local="clr-namespace:QPlan.ViewModels"
+             Title="Iniciar sesión">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="icono_x.png"
+                     Order="Default"
+                     Priority="0"
+                     Command="{Binding OnSaltarLogin}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid x:DataType="local:PaginaLoginViewModel">
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="20"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
                 <RowDefinition Height="10"></RowDefinition>
                 <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"></ColumnDefinition>
                 <ColumnDefinition Width="200"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Image Source="logo_QPlan.jpeg" Grid.Row="0" VerticalOptions="End" WidthRequest="100" HeightRequest="100" Grid.Column="0" Grid.ColumnSpan="3"></Image>
-            <Label Text="Iniciar sesión" Grid.Row="2" Grid.Column="1" FontSize="18"></Label>
+            <Image Source="icon_QPlan.png" Grid.Row="1" VerticalOptions="End" WidthRequest="100" HeightRequest="100" Grid.Column="0" Grid.ColumnSpan="3"></Image>
             <Label Text="Usuario:" Grid.Row="3" Grid.Column="1"></Label>
             <Entry x:Name="entUsuario" Grid.Row="4" Grid.Column="1" TextChanged="entUsuario_TextChanged"></Entry>
             <Label Text="Contraseña:" Grid.Row="5" Grid.Column="1"></Label>
             <Entry x:Name="entContra" IsPassword="True" Grid.Row="6" Grid.Column="1" TextChanged="entContra_TextChanged"></Entry>
-            <Button Text="Iniciar sesión" Grid.Row="8" Grid.Column="1" Command="{Binding OnIniciarSesionTapped}"></Button>
+            <Button Text="Iniciar sesión" Grid.Row="8" Grid.Column="1" BackgroundColor="white" BorderColor="black" BorderWidth="1" CornerRadius="10" Command="{Binding OnIniciarSesionTapped}"></Button>
+            <Label Text="¿No tienes cuenta?" Grid.Row="10" Grid.Column="1"></Label>
+            <Button Text="Registrarse" Grid.Row="11" Grid.Column="1" BackgroundColor="white" BorderColor="black" BorderWidth="1" CornerRadius="10" Command="{Binding OnRegistrarTapped}"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

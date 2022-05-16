@@ -90,5 +90,27 @@ namespace QPlan.Services
             }
             return resul;
         }
+
+        public async Task<bool> EraseLoginData()
+        {
+            bool resul = true;
+            TextWriter writer = null;
+            try
+            {
+                writer = new StreamWriter(fileName);
+                await writer.WriteLineAsync(constants[0] + constants[1] + constants[2]);
+            }catch(Exception ex)
+            {
+                throw new Exception("File writing error occured", ex.InnerException);
+            }
+            finally
+            {
+                if (writer != null)
+                {
+                    writer.Close();
+                }
+            }
+            return resul;
+        }
     }
 }
